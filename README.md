@@ -5,3 +5,10 @@
 Please note that these are two separate approaches to achieve a similar goal, and the files in this repo are aimed more towards the first as it is implemented in a more simplistic form. This allows us not to have to delve too heavily into building our own code to achieve the same functionality (although most of those forum posts go into good enough detail to understand).
 
 The articles should be cross referenced as well, as there are still some adjustments needed in regards to general compiler settings.
+
+### Notes:
+Please ignore the awkward usage of the following in the batch files:
+```bat
+%{% %}%
+```
+I implemented those as **`()`** because I wanted to maintain some kind of decent code formatting for conditionals and loops inside my current editor which seemingly has some borked indentation when using parens or square brackets.

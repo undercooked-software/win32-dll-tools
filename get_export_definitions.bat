@@ -25,7 +25,7 @@ SET OUTPUT_FILE="%FILENAME%.def"
 @ECHO EXPORTS > %OUTPUT_FILE%
 FOR /F "usebackq tokens=4 skip=%EXPORTS_HEADER_LEN% delims= " %%d IN (%EXPORTS_FILE%)^
 DO %{%
-        ECHO %%d >> %OUTPUT_FILE%
+        @ECHO %%d >> %OUTPUT_FILE%
         REM }
 %}%
 

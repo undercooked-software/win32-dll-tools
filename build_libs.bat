@@ -3,10 +3,6 @@ CALL env_init.bat
 
 SETLOCAL
 ::
-SET BIN_PATH=bin
-SET BIN_PATH_X86=%BIN_PATH%\x86
-SET BIN_PATH_X64=%BIN_PATH%\x64
-
 CALL :MakeDirectories
 
 SET DEF_FILE=%~1

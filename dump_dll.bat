@@ -20,7 +20,7 @@ DO %{%
 
 SET EXPORT_FILE="%FILENAME%.exp"
 
-dumpbin /exports %DLL_FILE% > %EXPORT_FILE%
+DUMPBIN /EXPORTS %DLL_FILE% > %EXPORT_FILE%
 
 GOTO :EOF
 ::

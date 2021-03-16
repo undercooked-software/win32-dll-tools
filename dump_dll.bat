@@ -8,7 +8,7 @@ SETLOCAL
     EXIT /B
   )
   
-  FOR /F "tokens=1,2 delims=." %%a IN ("%DLL_FILE%") DO (SET DLL_DIR=%%a)
+  FOR /F "delims=." %%a IN ("%DLL_FILE%") DO (SET DLL_DIR=%%a)
   FOR /F "delims=" %%a in ("%DLL_DIR%") DO (SET OUTPUT_DIR=%CWD%%%~na)
   MKDIR %OUTPUT_DIR% %QUIET%
 

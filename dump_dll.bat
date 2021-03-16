@@ -1,6 +1,11 @@
 @ECHO OFF
 SETLOCAL
-  CALL env_init.bat %~f0
+  REM %~f0 is the fully qualified path for the index given that cooresponds to the argument passed via CLI.
+  REM This can be viewed as [drive]:\[path]\[file] for argument index 0.
+  SET PARENT_FILE=%~f0
+  CALL env_init.bat %PARENT_FILE%
+
+  EXIT /B
   
   SET DLL_FILE=%~f1
   IF NOT EXIST "%DLL_FILE%" (

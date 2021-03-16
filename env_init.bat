@@ -5,26 +5,25 @@ IF "%~1" == "" (
 )
 
 :: Ultimately, we want to do a check here on a persistent environment variable containing %%~f of the parent script.
-:: We would do a comparison between %~1 and the %%~f contained in the persistent variable to make sure they are equal.
+:: We would do a comparison between %~f1 and the %%~f contained in the persistent variable to make sure they are equal.
 :: Doing this would prevent env_init.bat from being called in the command-line with a valid %~1 passed.
 :: This file would then perform cleanup of that persistent environment variable after finishing initialization.
 
 SETLOCAL
-  REM This check would be skipped in the event that the %~1 parameter is empty.
-  FOR %%? IN (%~1) DO (
-    REM ECHO FQP=%%~f?
-    REM ECHO extension=%%~x?
-    SET PARENT_FOUND=1
-    IF NOT "%%~x?" == ".bat"  SET PARENT_FOUND=
-    IF NOT EXIST "%%~f?"      SET PARENT_FOUND=
-    IF NOT DEFINED PARENT_FOUND (
-      ECHO The argument provided does not point to a parent script.
-      EXIT /B
-    )
+  SET PARENT_FOUND=1
+  IF NOT "%~x1" == ".bat"  SET PARENT_FOUND=
+  IF NOT EXIST "%~f1"      SET PARENT_FOUND=
+  IF NOT DEFINED PARENT_FOUND (
+    ECHO The argument provided does not point to a parent script.
+    EXIT /B
   )
 ENDLOCAL
 
+REM %~dp0 is the parent folder for the index given that cooresponds to the argument passed via CLI.
+REM This can be viewed as [drive]:\[path] for argument index 0.
 SET CWD=%~dp0
+
+REM A fairly good explanation of the jibberish below can be read here: https://stackoverflow.com/a/19599228
 SET QUIET=^>nul 2^>nul
 
 SET BIN_PATH=bin

@@ -1,5 +1,6 @@
 @ECHO OFF
 ECHO This file contains error handling functionality and should not be ran by itself.
+
 :: ========== FUNCTIONS ==========
 EXIT /B
 

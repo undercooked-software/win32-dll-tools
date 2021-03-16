@@ -19,10 +19,6 @@ SETLOCAL
   )
 ENDLOCAL
 
-REM %~dp0 is the parent folder for the index given that cooresponds to the argument passed via CLI.
-REM This can be viewed as [drive]:\[path] for argument index 0.
-SET CWD=%~dp0
-
 REM A fairly good explanation of the jibberish below can be read here: https://stackoverflow.com/a/19599228
 SET QUIET=^>nul 2^>nul
 

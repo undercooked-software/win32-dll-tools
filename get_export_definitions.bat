@@ -13,9 +13,9 @@ SETLOCAL
   )
 
   SET EXPORTS_FILE=%~1
-  SET OUTPUT_FILE=%EXPORTS_FILE:exp=def%
+  SET OUTPUT_FILE="%EXPORTS_FILE:exp=def%"
   
-  ECHO Generating file: "%OUTPUT_FILE%"
+  ECHO Generating file: %OUTPUT_FILE%
   ECHO EXPORTS > %OUTPUT_FILE%
   FOR /F "usebackq tokens=4 skip=%EXPORTS_HEADER_LEN% delims= " %%d IN (%EXPORTS_FILE%) DO (
     ECHO %%d >> %OUTPUT_FILE%

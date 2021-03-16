@@ -21,7 +21,8 @@ SETLOCAL
     CALL "setup_cl_generic.bat" x64
   POPD
 
-  DUMPBIN /NOLOGO /EXPORTS %DLL_FILE% > "%OUTPUT_PATH%\dump.exp"
+  SET OUTPUT_FILE="%OUTPUT_PATH%\dump.exp"
+  DUMPBIN /NOLOGO /EXPORTS %DLL_FILE% > %OUTPUT_FILE%
 ENDLOCAL
 
 :: ========== FUNCTIONS ==========

@@ -13,7 +13,7 @@ ENDLOCAL
 
 :ExportsNotFound
 SETLOCAL
-  SET ERR_MSG="The specified export file could not be found."
+  SET ERR_MSG="The specified exports file could not be found."
   CALL :DebugError %ERR_MSG%
   GOTO :EOF
 ENDLOCAL

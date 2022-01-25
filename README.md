@@ -9,7 +9,7 @@ Well. There are a couple of different files in the directory and I'll just go ah
 ## Dependencies
 Technically, the sole dependency is any version of the MSVC compiler toolchain that supports `dumpbin` and `lib`.
 
-The scripts do have a dependency on my other project [msvc-no-vars](https://github.com/undercooked-software/msvc-no-vcvars) but it isn't actually required. All this dependency does is make you avoid having to run these scripts from within the `x64` version of any Visual Studio developer command prompt. If you don't want to depend on that project then all you have to do is remove the following code snippet below from `build_libs.bat` and `dump_dll.bat`
+The scripts do have a dependency on my other project [msvc-no-vcvars](https://github.com/undercooked-software/msvc-no-vcvars) but it isn't actually required. All this dependency does is make you avoid having to run these scripts from within the `x64` version of any Visual Studio developer command prompt. If you don't want to depend on that project then all you have to do is remove the following code snippet below from `build_libs.bat` and `dump_dll.bat`
 
 ```batch
 PUSHD %TOOLCHAIN_SETUP_PATH%
